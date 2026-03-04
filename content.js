@@ -43,7 +43,6 @@ async function searchUsageHistory() {
   }
 
   triggerClick(threeMonthRadio);
-  await sleep(300);
 
   // "조회하기" 버튼 클릭
   const searchBtn = document.querySelector('button.btn-type05.v5');
@@ -52,16 +51,17 @@ async function searchUsageHistory() {
   }
 
   triggerClick(searchBtn);
+  await sleep(300);
 
-  // 조회 결과 로드 대기 (테이블 행이 나타날 때까지)
+  // 조회 결과 로드 대기 (행이 존재할 때까지)
   const maxWait = 10000;
   const interval = 300;
   let waited = 0;
+
   while (waited < maxWait) {
     await sleep(interval);
     waited += interval;
-    const rows = document.querySelectorAll('.tbl-type tbody tr');
-    if (rows.length > 0) {
+    if (document.querySelector('.tbl-type tbody tr')) {
       return { success: true };
     }
   }
@@ -121,6 +121,7 @@ async function autoFillWelfarePoints() {
 
     // 3. 체크박스 클릭 (아직 체크 안 된 경우만)
     if (!checkbox.checked) {
+      row.scrollIntoView({ behavior: 'smooth', block: 'center' });
       triggerClick(checkbox);
       await sleep(300); // Vue 반응성 대기: 체크 후 input 활성화
     }

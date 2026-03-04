@@ -75,7 +75,7 @@ WelfarePoints/
 1. Chrome 브라우저에서 `chrome://extensions` 접속
 2. 우측 상단 **개발자 모드** 활성화
 3. **압축해제된 확장 프로그램을 로드합니다** 클릭
-4. `H:\Project\WelfarePoints` 폴더 선택
+4. 이 프로젝트 폴더 선택
 
 ## 사용 방법
 
