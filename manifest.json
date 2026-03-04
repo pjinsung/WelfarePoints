@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "복지포인트 자동입력",
+  "version": "1.0.0",
+  "description": "이지웰 복지카드 차감신청 페이지에서 가용 복지포인트만큼 자동으로 체크 및 입력합니다.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://netmarbleneo.ezwel.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

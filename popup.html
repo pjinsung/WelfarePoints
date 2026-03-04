@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 320px;
+      font-family: -apple-system, 'Malgun Gothic', sans-serif;
+      background: #f8f9fa;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .header h1 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 12px;
+      color: #888;
+    }
+    .btn-fill {
+      width: 100%;
+      padding: 12px;
+      background: #4a6cf7;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-fill:hover { background: #3b5de7; }
+    .btn-fill:active { background: #2d4ed8; }
+    .btn-fill:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .result {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      line-height: 1.5;
+      display: none;
+    }
+    .result.success {
+      display: block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #c8e6c9;
+    }
+    .result.error {
+      display: block;
+      background: #fce4ec;
+      color: #c62828;
+      border: 1px solid #f8bbd0;
+    }
+    .info {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #999;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>복지포인트 자동입력</h1>
+    <p>가용 포인트 범위 내에서 자동 체크 및 입력</p>
+  </div>
+  <button class="btn-fill" id="btnAutoFill">자동 입력 실행</button>
+  <div class="result" id="result"></div>
+  <div class="info">이지웰 차감신청 페이지에서 사용하세요</div>
+  <script src="popup.js"></script>
+</body>
+</html>
